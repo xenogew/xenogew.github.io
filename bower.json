@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "homepage": "http://xenogew.github.io/",
   "authors": [
-    "nattasan.w <nattasan.w@asolutions.co.th>"
+    "nattasan.w <xenogew@gmail.com>"
   ],
   "description": "xenogew's blog",
   "main": "index.html",
@@ -22,6 +22,10 @@
     "tests"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#0.5"
+    "polymer": "Polymer/polymer#0.5",
+    "roboto-local": "*",
+    "core-header-panel": "Polymer/core-header-panel#0.5",
+    "core-toolbar": "Polymer/core-toolbar#0.5",
+    "paper-tabs": "Polymer/paper-tabs#0.5"
   }
 }
