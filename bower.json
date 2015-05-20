@@ -1,0 +1,27 @@
+{
+  "name": "xenogew.github.io",
+  "version": "0.0.1",
+  "homepage": "http://xenogew.github.io/",
+  "authors": [
+    "nattasan.w <nattasan.w@asolutions.co.th>"
+  ],
+  "description": "xenogew's blog",
+  "main": "index.html",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "blog"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#0.5"
+  }
+}
