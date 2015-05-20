@@ -1,0 +1,11 @@
+github-access-token-key.txt
+
+######################
+# Intellij
+######################
+.idea/**
+*.iml
+*.iws
+*.ipr
+*.ids
+*.orig
