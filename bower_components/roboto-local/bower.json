@@ -1,0 +1,25 @@
+{
+  "name": "roboto-local",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Ridygo/roboto-local",
+  "authors": [
+    "Arnaud Delcasse <arnaud@delcasse.fr>"
+  ],
+  "description": "Use HTML import to include Roboto font locally",
+  "main": "roboto-local.html",
+  "keywords": [
+    "HTML import",
+    "roboto"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "roboto-fontface": "~0.3.0"
+  }
+}
