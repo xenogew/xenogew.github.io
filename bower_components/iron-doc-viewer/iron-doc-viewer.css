@@ -38,9 +38,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   padding: 4px 16px;
   color: var(--paper-grey-800);
 }
-#api #togglePrivate {
-  opacity: 0.5;
-}
 
 /* Common Formatting */
 
@@ -55,6 +52,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   overflow-x: auto;
   padding: 12px 24px;
   font-size: 15px;
+  word-wrap: break-word;
 }
 
 #summary marked-element::shadow #content table {
@@ -151,4 +149,3 @@ iron-doc-property[configuration] {
   padding: 16px 24px;
   cursor: pointer;
 }
-
