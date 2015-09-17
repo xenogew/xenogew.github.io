@@ -1,6 +1,5 @@
 node_modules
 dist
-bower_components
 .tmp
 
 github-access-token-key.txt
