@@ -20,7 +20,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- Place favicon.ico in the `app/` directory -->
 
   <!-- Chrome for Android theme color -->
-  <meta name="theme-color" content="#303F9F">
+  <meta name="theme-color" content="#2E3AA1">
 
   <!-- Web Application Manifest -->
   <link rel="manifest" href="manifest.json">
@@ -47,12 +47,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- endbuild-->
 
   <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
-  <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <!-- endbuild -->
 
   <!-- will be replaced with elements/elements.vulcanized.html -->
   <link rel="import" href="elements/elements.html">
   <!-- endreplace-->
+
+  <!-- For shared styles, shared-styles.html import in elements.html -->
+  <style is="custom-style" include="shared-styles"></style>
+
 </head>
 
 <body unresolved class="fullbleed layout vertical">
@@ -69,18 +73,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </paper-toolbar>
 
         <!-- Drawer Content -->
-        <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
-          <a data-route="home" href="/">
+        <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
+          <a data-route="home" href="/" on-click="onDataRouteClick">
             <iron-icon icon="home"></iron-icon>
             <span>Home</span>
           </a>
 
-          <a data-route="users" href="/users">
+          <a data-route="users" href="/users" on-click="onDataRouteClick">
             <iron-icon icon="info"></iron-icon>
             <span>Users</span>
           </a>
 
-          <a data-route="contact" href="/contact">
+          <a data-route="contact" href="/contact" on-click="onDataRouteClick">
             <iron-icon icon="mail"></iron-icon>
             <span>Contact</span>
           </a>
@@ -151,7 +155,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             <section data-route="users">
               <paper-material elevation="1">
-                <h2 class="paper-font-display2">Users</h2>
+                <h2 class="page-title">Users</h2>
                 <p>This is the users section</p>
                 <a href="/users/Rob">Rob</a>
               </paper-material>
@@ -159,7 +163,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             <section data-route="user-info">
               <paper-material elevation="1">
-                <h2 class="paper-font-display2">
+                <h2 class="page-title">
                 User:<span>{{params.name}}</span>
                 </h2>
                 <div>This is <span>{{params.name}}</span>'s section</div>
@@ -168,7 +172,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             <section data-route="contact">
               <paper-material elevation="1">
-                <h2 class="paper-font-display2">Contact</h2>
+                <h2 class="page-title">Contact</h2>
                 <p>This is the contact section</p>
               </paper-material>
             </section>
@@ -189,8 +193,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                           clients-claim
                           skip-waiting
                           on-service-worker-installed="displayInstalledToast">
-      <platinum-sw-cache default-cache-strategy="networkFirst"
-                         precache-file="precache.json">
+      <platinum-sw-cache default-cache-strategy="fastest"
+                         cache-config-file="cache-config.json">
       </platinum-sw-cache>
     </platinum-sw-register>
     -->
