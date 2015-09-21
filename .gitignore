@@ -1,3 +1,9 @@
+node_modules
+dist
+.tmp
+bower_components/**/*.json
+bower_components/**/README.md
+
 github-access-token-key.txt
 
 ######################
@@ -9,3 +15,62 @@ github-access-token-key.txt
 *.ipr
 *.ids
 *.orig
+
+######################
+# Maven
+######################
+/log/**
+/target/**
+
+######################
+# Gradle
+######################
+.gradle/**
+
+######################
+# Package Files
+######################
+*.jar
+*.war
+*.ear
+*.db
+
+######################
+# Windows
+######################
+# Windows image file caches
+Thumbs.db
+
+# Folder config file
+Desktop.ini
+
+######################
+# Directories
+######################
+/build/**
+/bin/**
+/spring_loaded/**
+/deploy/**
+
+######################
+# Logs
+######################
+*.log
+
+######################
+# Others
+######################
+*.class
+*.*~
+*~
+.merge_file*
+
+######################
+# Gradle Wrapper
+######################
+!gradle/wrapper/gradle-wrapper.jar
+
+######################
+# SASS
+######################
+.sass-cache/**
