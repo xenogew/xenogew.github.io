@@ -1,7 +1,7 @@
 node_modules
 dist
 .tmp
-bower_components/**/*.json
+bower_components/**.json
 bower_components/**/README.md
 
 github-access-token-key.txt
