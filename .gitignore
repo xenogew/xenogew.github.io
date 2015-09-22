@@ -1,8 +1,7 @@
 node_modules
 dist
 .tmp
-bower_components/**/*.json
-bower_components/**/test/**
+bower_components
 
 github-access-token-key.txt
 
