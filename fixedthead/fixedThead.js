@@ -152,7 +152,7 @@
 		if (opts.bottom) {
 			configs.wrapper.css('margin-bottom', opts.bottom);
 		}
-		return configs;			
+		return configs;
 	}
 
 	// 构建头部
@@ -165,6 +165,22 @@
 		} else {
 			wrap.empty().append(headTable);  // empty()一下释放内存
 		}
+
+		wrap.find('tbody').each(function(index, elmt){
+			$(elmt).find('*').each(function(index, elmt){
+                elmtId = $(elmt).attr('id');
+                if(elmtId) {
+                    $(elmt).attr('id', makeSalt());
+                }
+                elmtClass = $(elmt).attr('class');
+                if(elmtClass) {
+                    $(elmt).attr('class', makeSalt());
+                }
+                if($(elmt).is('input')) {
+                    $(elmt).prop('disabled', true);
+                }
+			});
+		});
 		return wrap;
 	}
 
