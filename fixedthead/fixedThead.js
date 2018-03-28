@@ -11,7 +11,8 @@
 			top: 0,          // 表格距离顶部的距离
 			bottom: 0,       // 表格距离底部的距离
 			row: 1,          // 要固定的行数
-			col: 0           // 要固定的列数
+            col: 0,          // 要固定的列数
+            distorted: 0
  		};
  		var opts = $.extend(defaults, $.fn.fixedThead.option, options);
 
@@ -164,23 +165,10 @@
 			configs.bodyWrap.before(wrap.append(headTable));
 		} else {
 			wrap.empty().append(headTable);  // empty()一下释放内存
-		}
+        }
+        
+        wrap = distoredUnimportant(wrap, configs);
 
-		wrap.find('tbody').each(function(index, elmt){
-			$(elmt).find('*').each(function(index, elmt){
-                elmtId = $(elmt).attr('id');
-                if(elmtId) {
-                    $(elmt).attr('id', makeSalt());
-                }
-                elmtClass = $(elmt).attr('class');
-                if(elmtClass) {
-                    $(elmt).attr('class', makeSalt());
-                }
-                if($(elmt).is('input')) {
-                    $(elmt).prop('disabled', true);
-                }
-			});
-		});
 		return wrap;
 	}
 
@@ -206,7 +194,10 @@
 			configs.bodyWrap.before(wrap.append(cornerTable));
 		} else {				
 			wrap.empty().append(cornerTable);				
-		}
+        }
+        
+        wrap = distoredUnimportant(wrap, configs);
+
 		return wrap;
 	}
 
@@ -329,5 +320,24 @@
 	// Make random string to destroy the 'id' and 'class' attributes value to the unimportant cloned tabled
 	function makeSalt() {
 		return Math.random().toString(36).substr(2, 8);
-	  }
+    }
+    
+    function distoredUnimportant(wrap, configs) {
+        wrap.find('tbody').each(function(index, elmt){
+            $(elmt).find('*').each(function(index, elmt){
+                elmtId = $(elmt).attr('id');
+                if(elmtId) {
+                    $(elmt).attr('id', makeSalt());
+                }
+                elmtClass = $(elmt).attr('class');
+                if(elmtClass) {
+                    $(elmt).attr('class', makeSalt());
+                }
+                if($(elmt).is('input')) {
+                    $(elmt).prop('disabled', true);
+                }
+			});
+        });
+        return wrap;
+    }
 })(jQuery);
